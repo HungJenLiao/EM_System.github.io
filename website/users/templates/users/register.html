@@ -1,0 +1,41 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'users/register.css' %}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="title-section">
+        <h1>註冊救護管理系統</h1>
+    </div>
+    <div class="content-section">
+        <div class="form-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Join Today</legend>
+                    {{ form|crispy }}
+                </fieldset>
+        
+                By registering, you accept the Terms of Service and Privacy Notice
+        
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'custom_login' %}">Sign In</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

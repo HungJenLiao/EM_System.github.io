@@ -1,0 +1,47 @@
+{% extends "main/header.html" %}
+{% load static %}
+
+{% block title %}使用者列表{% endblock title %}
+
+{% block content %}
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">使用者列表</h1>
+    <!-- Table Code -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+        </div>
+        <div class="card-body">
+            <div class="table">
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>標號</th>
+                            <th>使用者帳號</th>
+                            <th>Email</th>
+                            <th>前次登入時間</th>
+                            <th>加入時間</th>
+                            <th>修改</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in all_users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.last_login|date:"Y/m/d H:m:s" }}</td>
+                                <td>{{ user.date_joined|date:"Y/m/d H:m:s" }}</td> 
+                                <td>
+                                    <a href="#">
+                                        <img class="img-profile" src="{% static 'assets/Edit.svg' %}">
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+body {
+    background: rgb(2,0,36)!important;
+    background: linear-gradient(17deg, rgba(2,0,36,1) 0%, rgba(202,202,202,0.9528405112044818) 43%, rgba(214,248,255,1) 100%)!important;
+}
+
+.login-wrap-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    color: black;
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    border-radius: 10%;
+    box-shadow: 0px 2px 55px -4px rgba(0,0,0,0.76);
+    -webkit-box-shadow: 0px 2px 55px -4px rgba(0,0,0,0.76);
+    -moz-box-shadow: 0px 2px 55px -4px rgba(0,0,0,0.76); 
+    margin-top: 60px;
+}

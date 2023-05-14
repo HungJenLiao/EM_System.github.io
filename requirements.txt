@@ -1,0 +1,7 @@
+django
+django-crispy-forms
+fontawesomefree
+crispy_bootstrap4
+django-bootstrap-v5
+pandas
+django-recaptcha

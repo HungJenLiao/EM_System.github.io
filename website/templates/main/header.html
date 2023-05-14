@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'include/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'main/header.css' %}">
+    <link rel="stylesheet" href="{% static 'include/sidebar.css' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    
+    {% block css %}{% endblock css %}
+        
+
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="header-container-scroll">
+        <div class="header-container">
+                <div class="header-sidebar">
+                    {% include 'main/includes/sidebar.html' %}
+                </div>
+                <div class="header-content">
+                    <div class="header-navbar shadow">
+                        {% include 'main/includes/navbar.html' %}
+                    </div>
+                    <div class="main-content">
+                    {% block content %}
+                    {% endblock content %}
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- ADD SPECIFIC SCRIPT FILE-->
+    {% block script %}{% endblock script %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="{% static 'main/datatables.js' %}"></script>
+</body>
+</html>

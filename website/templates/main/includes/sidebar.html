@@ -1,0 +1,67 @@
+{% load static %}
+
+<div class="sidebar-containers">
+    <div class="sidebar-container">
+        <div class="title-container">
+                <a href="{% url 'dashboard' %}">
+                    <img src="{% static 'assets/Icon.png' %}" alt="">
+                    <div class="title">
+                        <span>救護管理系統</span>
+                    </div>
+                </a>
+        </div>
+        <hr width="100%" style="background-color:white;opacity:1;">
+        <div class="dashboard-container">
+                <a href="{% url 'dashboard' %}">
+                    <img src="{% static 'assets/Dashboard.png' %}" alt="" class="gray-filtered">
+                    <div class="dashboard">
+                        <span>資訊列表</span>
+                    </div>
+                </a>
+        </div>
+        <hr width="100%" style="background-color:white;opacity:1;">
+        <div class="function-interface-container">
+                <div class="function-title">
+                    <small>功能介面</small>
+                </div>
+                <div class="function-list">
+                    <ul>
+                        <li>
+                            <a href="{% url 'upload' %}">
+                                <img src="{% static 'assets/Upload.png' %}" alt="" class="gray-filtered">
+                                <span>資料上傳</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'list' %}">
+                                <img src="{% static 'assets/List.png' %}" alt="" class="gray-filtered">
+                                <span>救護案件列表</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <hr width="100%" style="background-color:white;opacity:1;">
+        <div class="function-interface-container">
+                <div class="function-title">
+                    <small>系統介面</small>
+                </div>
+                <div class="function-list">
+                    <ul>
+                        <li>
+                            <a href="{% url 'user' %}">
+                                <img src="{% static 'assets/User.png' %}" alt="" class="gray-filtered">
+                                <span>使用者</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'record' %}">
+                                <img src="{% static 'assets/Records.png' %}" alt="" class="gray-filtered">
+                                <span>使用紀錄</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>

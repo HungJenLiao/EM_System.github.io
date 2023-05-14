@@ -1,0 +1,49 @@
+{% extends "main/header.html" %}
+{% load static %}
+
+{% block title %}救護案件列表{% endblock title %}
+
+{% block content %}
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">救護案件列表</h1>
+    <!-- Table Code -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="{% url 'listEdit' %}">新增救護案件</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"">
+                    <thead>
+                        <tr>
+                            <th>案發日期</th>
+                            <th>車輛</th>
+                            <th>內容</th>
+                            <th>地點</th>
+                            <th>修改</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for list in list_table %}
+                        <tr>
+                            <td>{{ list.DateTime|date:"Y/m/d H:m:s" }}</td>
+                            <td>{{ list.Car }}</td>
+                            <td>{{ list.Detail }}</td>
+                            <td>{{ list.Location }}</td>
+                            <td>
+                                <a href="{% url 'listUpdate' list.id %}" class="btn btn btn-outline-primary btn-sm">
+                                    Update
+                                </a>
+                                <a href="{% url 'listDelete' list.id %}" class="btn btn btn-outline-danger btn-sm">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+{% endblock content %}

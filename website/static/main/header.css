@@ -1,0 +1,51 @@
+body {
+    height: 100vh!important;
+}
+
+.header-container-scroll {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 230px;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.header-content {
+    height: 100%;
+    width: calc(100% - 230px);
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll!important;
+}
+
+.header-navbar {
+    height: 86px;
+    width: 100%;
+}
+
+.main-content {
+    padding: 20px;
+    height: calc(100% - 86px);
+    width: 100%;
+}
